@@ -1,28 +1,37 @@
-package class1.ex;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class ProductOrderMain {
+package class1.ex;public class ProductOrderMain {
     public static void main(String[] args) {
-        ProductOrder productOrder1 = new ProductOrder("컴퓨터", 1, 1500);
-        ProductOrder productOrder2 = new ProductOrder("세탁기", 1, 2400);
-        ProductOrder productOrder3 = new ProductOrder("냉장고", 1, 1200);
+        ProductOrder[] orders = new ProductOrder[3];
 
-        List<ProductOrder> productOrderList = new ArrayList<ProductOrder>();
-        productOrderList.add(productOrder1);
-        productOrderList.add(productOrder2);
-        productOrderList.add(productOrder3);
 
-        int total = 0;
+        orders[0] = createOrder("두부", 2000, 2);
+        orders[1] = createOrder("김치", 2000, 1);
+        orders[2] = createOrder("콜라", 2000, 1);
 
-        for (ProductOrder productOrder : productOrderList) {
-            System.out.println(productOrder);
-
-            total += productOrder.getPrice();
-
-        }
-
-        System.out.println("총가격: " + total); 
+        printOrders(orders);
+        int totalAmount = getTotalAmount(orders);
+        System.out.println("totalAmount = " + totalAmount);
     }
-}
+
+    private static ProductOrder createOrder(String productName, int price, int quantity) {
+        ProductOrder order = new ProductOrder();
+        order.setProductName(productName);
+        order.setQuantity(quantity);
+        order.setPrice(price);
+        return order;
+    }
+
+    private static int getTotalAmount(ProductOrder[] orders) {
+        int totalAmount = 0;
+        for (ProductOrder order : orders) {
+            totalAmount += order.getPrice() * order.getQuantity();
+        }
+        return totalAmount;
+    }
+
+    private static void printOrders(ProductOrder[] orders) {
+        System.out.println();
+        for (ProductOrder order : orders) {
+            System.out.println("상품명 = " + order.getProductName() );
+        }
+    }
+    }

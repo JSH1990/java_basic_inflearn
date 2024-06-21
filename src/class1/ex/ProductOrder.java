@@ -1,24 +1,12 @@
 package class1.ex;
 
+/*
+상품 주문정보
+ */
 public class ProductOrder {
-    private String productName;
-    private int quantity;
-    private int price;
-
-    public ProductOrder(String productName, int quantity, int price) {
-        this.productName = productName;
-        this.quantity = quantity;
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductOrder{" +
-                "상품이름='" + productName + '\'' +
-                ", 갯수=" + quantity +
-                ", 가격=" + price +
-                '}';
-    }
+    private String productName; //상품명
+    private int price; //가격
+    private int quantity; //주문 수량
 
     public String getProductName() {
         return productName;
@@ -26,6 +14,14 @@ public class ProductOrder {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getQuantity() {
@@ -36,11 +32,14 @@ public class ProductOrder {
         this.quantity = quantity;
     }
 
-    public int getPrice() {
-        return price;
+    ProductOrder(){
     }
 
-    public void setPrice(int price) {
+    ProductOrder(String productName, int price, int quantity) {
+        this.productName = productName;
         this.price = price;
+        this.quantity = quantity;
     }
+
+
 }
