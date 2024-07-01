@@ -2,12 +2,14 @@ package ex1;
 
 public class MaxCounterMain {
     public static void main(String[] args) {
-        MaxCounter mc = new MaxCounter(3);
-        mc.increment();
-        mc.increment();
-        mc.increment();
-        mc.increment();
-        int count = mc.getCount();
-        System.out.println(count);
+        ShoppingCart cart = new ShoppingCart();
+
+        Item item1 = new Item("마늘", 2000, 2);
+        Item item2 = new Item("상추", 3000, 4);
+
+        cart.addItem(item1);
+        cart.addItem(item2);
+
+        cart.displayItems();
     }
 }
