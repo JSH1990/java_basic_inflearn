@@ -1,20 +1,31 @@
 package poly.ex1;
 
+import poly.ex2.Duck;
+
 public class AnimalSoundMain {
+
     public static void main(String[] args) {
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        Caw caw = new Caw();
 
-        Animal[] animals = {new Dog(),new Cat(),new Dog()};
+        System.out.println("동물 소리 테스트 시작");
+        dog.sound();
+        System.out.println("동물 소리 테스트 종료");
 
-        for (Animal animal : animals) {
-            soundAnimal(animal);
-        }
+        soundCat(cat);
+        soundCaw(caw);
     }
 
-    private static void soundAnimal(Animal animal) {
-        animal.sound();
+    private static void soundCat(Cat cat) {
+        System.out.println("동물 소리 테스트 시작");
+        cat.sound();
+        System.out.println("동물 소리 테스트 종료");
     }
-//
-//    private static void soundAnimal(Animal animal) {
-//        animal.sound();
-//    }
+
+    private static void soundCaw(Caw caw) {
+        System.out.println("동물 소리 테스트 시작");
+        caw.sound();
+        System.out.println("동물 소리 테스트 종료");
+    }
 }

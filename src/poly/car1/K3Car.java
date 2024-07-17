@@ -16,4 +16,3 @@ public class K3Car implements Car {
         System.out.println("K3Car.pressAccelerator");
     }
 }
-
