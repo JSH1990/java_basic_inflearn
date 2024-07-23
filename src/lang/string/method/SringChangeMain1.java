@@ -1,0 +1,12 @@
+package lang.string.method;
+
+public class SringChangeMain1 {
+    public static void main(String[] args) {
+        String str = "Hello, Java! Welcome to Java!";
+
+        System.out.println(str.substring(7));
+        System.out.println(str.substring(7,12));
+        System.out.println(str.concat("!!!"));
+        System.out.println(str.replace("Jsva", "World"));
+    }
+}
